@@ -14,9 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const generateIdeaBtn = document.getElementById('generateIdeaBtn');
     const codingIdea = document.getElementById('codingIdea');
+    const shareIdeaBtn = document.getElementById('shareIdeaBtn');
+    const toggleDarkModeBtn = document.getElementById('toggleDarkModeBtn');
 
     generateIdeaBtn.addEventListener('click', () => {
         const randomIndex = Math.floor(Math.random() * codingIdeas.length);
         codingIdea.textContent = codingIdeas[randomIndex];
+        shareIdeaBtn.style.display = 'inline-block';
+    });
+
+    shareIdeaBtn.addEventListener('click', () => {
+        const idea = codingIdea.textContent;
+        const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(idea)}`;
+        window.open(shareUrl, '_blank');
+    });
+
+    toggleDarkModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.container').classList.toggle('dark-mode');
+        document.querySelectorAll('button').forEach(button => button.classList.toggle('dark-mode'));
     });
 });
