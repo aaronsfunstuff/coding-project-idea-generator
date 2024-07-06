@@ -6,6 +6,12 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
@@ -14,6 +20,12 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container.dark-mode {
+    background: #333;
+    color: #fff;
 }
 
 h1 {
@@ -32,6 +44,11 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+button.dark-mode {
+    background-color: #333;
+    color: white;
 }
 
 p {
